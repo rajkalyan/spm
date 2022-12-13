@@ -1,0 +1,147 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %} Order {% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h3 class="text-center text-light">Saloon services</h3>
+</div>
+<div class="container mt-4">
+<div class="row mx-2">
+{% for i in starters %}
+<div class="col col-md-3">
+  <form method="POST" >
+    {% csrf_token %}
+  <div class="card shadow-lg my-2" >
+    <img class="card-img-top" src="{{i.simage.url}}" alt="Card image" style="height:200px; width:200" >
+    <div class="card-body">
+      <h4 class="card-title">{{i.sname}}</h4>
+      <h6 class = "card-title text-dark">{{i.sprice}}</h6>
+      {% if i.scategory == 'Veg' %}
+      <h6 class = "card-title text-dark"><span class="badge badge-success">{{i.scategory}}</span></h6>
+      {% else %}
+      <h6 class = "card-title text-dark"><span class="badge badge-danger">{{i.scategory}}</span></h6>
+      {% endif %}
+      <input type="hidden" value="{{i.sname}}" name="itemname" class="form-control">
+      <input type="hidden" value="{{i.sprice}}" name="itemprice" class="form-control">
+      <input type="text"  placeholder="Enter quantity" name="qt" class="form-control">
+      <input type="submit" value="add" class="btn btn-outline-info" class="form-control">
+    </div>
+  </div>
+  </form>
+</div>
+{% endfor %}
+</div>      
+</div>
+      
+<div class="container mt-4">
+    <h3 class="text-center text-light">Home services</h3>
+</div>
+<div class="container mt-4">
+<div class="row mx-2">
+{% for j in breads %}
+  <div class="col col-md-3">
+    <form method="POST" >
+      {% csrf_token %}
+    <div class="card shadow-lg my-2" >
+      <div class="card-body">
+        <h4 class="card-title">{{j.bname}}</h4>
+        <h6 class = "card-title text-dark">{{j.bprice}}</h6>
+        <input type="hidden" value="{{j.bname}}" name="itemname" class="form-control">
+        <input type="hidden" value="{{j.bprice}}" name="itemprice" class="form-control">
+        <input type="text"  placeholder="Enter quantity" name="qt" class="form-control">
+        <input type="submit" value="add" class="btn btn-outline-info" class="form-control">
+      </div>
+    </div>
+    </form>
+  </div>
+{% endfor %}
+</div>      
+</div>
+<div class="container mt-4">
+    <h3 class="text-center text-light">Furniture services</h3>
+</div>
+<div class="container mt-4">
+<div class="row mx-2">
+{% for l in rice %}
+  <div class="col col-md-3">
+    <form method="POST" >
+      {% csrf_token %}
+    <div class="card shadow-lg my-2" >
+      <div class="card-body">
+        <h4 class="card-title">{{l.rbname}}</h4>
+        <h6 class = "card-title text-dark">{{l.rbprice}}</h6>
+        {% if l.rbcategory == 'Veg' %}
+        <h6 class = "card-title text-dark"><span class="badge badge-success">{{l.rbcategory}}</span></h6>
+        {% else %}
+        <h6 class = "card-title text-dark"><span class="badge badge-danger">{{l.rbcategory}}</span></h6>
+        {% endif %}
+        <input type="hidden" value="{{l.rbname}}" name="itemname" class="form-control">
+        <input type="hidden" value="{{l.rbprice}}" name="itemprice" class="form-control">
+        <input type="text"  placeholder="Enter quantity" name="qt" class="form-control">
+        <input type="submit" value="add" class="btn btn-outline-info" class="form-control">
+      </div>
+    </div>
+    </form>
+  </div>
+{% endfor %}
+</div>      
+</div>
+<!--
+<div class="container mt-4">
+    <h3 class="text-center text-light">Chinese</h3>
+</div>
+<div class="container mt-4">
+<div class="row mx-2">
+{% for m in chinese %}
+  <div class="col col-md-3">
+    <form method="POST" >
+      {% csrf_token %}
+    <div class="card shadow-lg my-2" >
+      <img class="card-img-top" src="{{m.chimage.url}}" alt="Card image" style="height:200px; width:200" >
+      <div class="card-body">
+        <h4 class="card-title">{{m.chname}}</h4>
+        <h6 class = "card-title text-dark">{{m.chprice}}</h6>
+        {% if m.chcategory == 'Veg' %}
+        <h6 class = "card-title text-dark"><span class="badge badge-success">{{ m.chcategory}}</span></h6>
+        {% else %}
+        <h6 class = "card-title text-dark"><span class="badge badge-danger">{{ m.chcategory}}</span></h6>
+        {% endif %}
+        <input type="hidden" value="{{m.chname}}" name="itemname" class="form-control">
+        <input type="hidden" value="{{m.chprice}}" name="itemprice" class="form-control">
+        <input type="text"  placeholder="Enter quantity" name="qt" class="form-control">
+        <input type="submit" value="add" class="btn btn-outline-info my-2" class="form-control">
+      </div>
+    </div>
+    </form>
+  </div>
+{% endfor %}
+</div>      
+</div>
+
+<div class="container mt-4">
+    <h3 class="text-center text-light">Thickshakes</h3>
+</div>
+<div class="container mt-4">
+<div class="row mx-2">
+{% for n in thickshake %}
+  <div class="col col-md-3">
+    <form method="POST" >
+      {% csrf_token %}
+    <div class="card shadow-lg my-2" >
+      <img class="card-img-top" src="{{n.timage.url}}" alt="Card image" style="height:200px; width:200" >
+      <div class="card-body">
+        <h4 class="card-title">{{n.tname}}</h4>
+        <h6 class = "card-title text-dark">{{n.tprice}}</h6>
+        <input type="hidden" value="{{n.tname}}" name="itemname" class="form-control">
+        <input type="hidden" value="{{n.tprice}}" name="itemprice" class="form-control">
+        <input type="text"  placeholder="Enter quantity" name="qt" class="form-control">
+        <input type="submit" value="add" class="btn btn-outline-info my-2" class="form-control">
+      </div>
+    </div>
+  </form>
+  </div>
+{% endfor %}
+</div>      
+</div>
+-->
+{% endblock %}

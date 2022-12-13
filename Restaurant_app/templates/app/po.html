@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% block title %} Order Dashboard {% endblock %}
+{% block content %}
+<div class="card-dark col-md">
+    <div class="card-body">
+        <h3 class=" text-light text-center shadow-lg p-2">Ordered Items</h3>
+        <table class="table table-bordered table-hover">
+            <tr class="bg-dark text-light">
+                <th>S.no</th>
+                <th>Customer</th>
+                <th>Address</th>
+                <th>Items + Quantity</th>
+                <th>Action</th>
+            </tr>
+            {% for u in orders %}
+            <tr  class="text-light">
+               <td>{{forloop.counter}}</td>
+               <td>{{u.uname}}</td>
+               <td>{{u.tname}}</td>
+               <td>{{u.items}}</td>
+               <td><a href="{% url 'od' u.id %}" class="btn btn-danger">Delete</a></td>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

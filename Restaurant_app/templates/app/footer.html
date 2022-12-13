@@ -1,0 +1,84 @@
+{% load static %}
+<footer class=" foot container-fluid text-center bg-dark mt-4">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="title text-center text-white" style="font-size: 15px;">Our served cities</div>
+            <table class="table table-borderless text-white">
+                <tr>
+                    <td>Vijayawada</td>
+                    <td>Guntur</td>
+                </tr>
+                <tr>
+                    <td>Kakinada</td>
+                    <td>Rajahmundry</td>
+                </tr>
+                <tr>
+                    <td>Vizag</td>
+                    <td>Anantapur</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <div class="title ttext-center text-white" style="font-size: 15px; ">Our Links</div>
+            <table class="table table-borderless text-white">
+                <tr>
+                    <td>
+                        <a href="{% url 'hm' %}" class="btn btn-link" role="button" style="color: white;">Home</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{% url 'ab' %}" class="btn btn-link" role="button" style="color: white;">About us</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{% url 'ct' %}" class="btn btn-link" role="button" style="color: white;">Contact us</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <div class="title text-center text-white" style="font-size: 15px;">Follow us</div>
+            <table class="table table-borderless text-white">
+                <tr>
+                    <td>
+                        <a href="www.youtube.com"><img src="{% static 'images/y.svg' %}" alt="Youtube"></a>
+                    </td>
+                    <td>
+                        <a href="www.youtube.com"><img src="{% static 'images/f.svg' %}" alt="Youtube"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="www.youtube.com"><img src="{% static 'images/t.svg' %}" alt="Youtube"></a>
+                    </td>
+                    <td>
+                        <a href="www.youtube.com"><img src="{% static 'images/i.svg' %}" alt="Youtube"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <div class="title text-center text-white" style="font-size: 15px;">Download our app</div>
+            <table class="table table-borderless text-white">
+                <tr>
+                    <td>
+                        <a href="https://www.apple.com/in/app-store/"><img src="{% static 'images/ios.png' %}" alt="Appstore"></a>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://play.google.com/"><img src="{% static 'images/play.png' %}" alt="Playstore"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center text-white">
+            TM & Copyright 2021 Book my service Limited. All Rights Reserved
+        </div>
+    </div>
+</footer>

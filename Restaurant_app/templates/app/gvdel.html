@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{%block title%}Permission Delete Delete{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card col-md-6 ">
+        <div class="card-body">
+            <div class="card-title">
+                <h3>Permission Delete</h3>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <h5>ARE U SURE U WANT TO DELETE THIS REQUEST?</h5>
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'gvpm' %}" class="btn btn-outline-primary form-control my-2">CANCEL</a>
+                    </div>
+                    <div class="col">
+                        <input type="submit" class="btn btn-outline-success form-control my-2" value="DELETE">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

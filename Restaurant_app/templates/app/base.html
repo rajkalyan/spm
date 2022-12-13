@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        html {
+            position: relative;
+            min-height: 100%;
+            padding-bottom: 160px;
+            background-color:black
+            
+        }
+        
+        body {
+            margin-bottom: 160px;
+            background-color:black
+        }
+        
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'app/navbar.html' %} 
+    {% block content %} 
+    {% endblock %}
+    {% include 'app/footer.html' %}
+    
+</body>
+</html>

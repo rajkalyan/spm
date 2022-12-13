@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% block title %} Order Dashboard {% endblock %}
+{% block content %}
+<div class="card-dark col-md">
+    <div class="card-body">
+        <h3 class=" text-light text-center shadow-lg p-2">Ordered Items</h3>
+        <table class="table table-bordered table-hover">
+            <tr class="bg-dark text-light">
+                <th>S.no</th>
+                <th>Items</th>
+                <th>Bill Amount</th>
+                <th>Time</th>
+            </tr>
+            {% for u in oh %}
+            <tr  class="text-light">
+               <td>{{forloop.counter}}</td>
+               <td>{{u.items}}</td>
+               <td>{{u.billamoubt}}</td>
+               <td>{{u.time}}</td>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

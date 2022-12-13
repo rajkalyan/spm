@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% block title %} Order Dashboard {% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="card-dark col-md-6 mx-auto">
+        <div class="card-body">
+            <h3 class="text-center text-light">Item Quantity Update</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <h6 class="text-light">Item Name :</h6>
+                <input type="text" value="{{p.name}}" class="form-control my-2" readonly>
+                <h6 class="text-light">Item Price :</h6>
+                <input type="text" value="{{p.price}}" class="form-control my-2" readonly>
+                <h6 class="text-light">Current Total Price for the Item :</h6>
+                <input type="text" value="{{ct}}" class="form-control my-2" readonly>
+                <h6 class="text-light">Update quantity :</h6>
+                <input type="number" name="n" class="form-control my-2" value="{{p.quantity}}">
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'accept' %} " class="btn btn-outline-secondary col-sm my-2 form-control">Back</a>
+                            <input type="submit" value="Update" class="btn btn-outline-success col-sm my-2 form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

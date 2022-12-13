@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% block title %} Order Dashboard {% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="card-dark col ">
+        <div class="card-body">
+            <div class="card-title">
+                <h3 class="text-center text-light mt-5">Delete Item</h3>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col mt-3">
+                        <a href="{% url 'accept' %}" class="btn btn-outline-primary form-control my-2">CANCEL</a>
+                    </div>
+                    <div class="col mt-3">
+                        <input type="submit" class="btn btn-outline-danger form-control my-2" value="DELETE">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

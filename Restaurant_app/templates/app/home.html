@@ -1,0 +1,94 @@
+{% extends 'app/base.html' %}
+{% load static %} 
+{% block title %}Home{% endblock %} 
+{% block content %}
+<div class="container-fluid mt-4 ">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/img1.jpg' %}" alt="Los Angeles" width="500" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/img2.jpg' %}" alt="Chicago" width="500" height="500">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="heading text-white text-center mt-4">
+        <h3>HELLO FOODIES</h3>
+    </div>
+    <div class="text text-white text-center">Biriyani Bae Cuisine is remarkably known for its Mandi Biryani. The moist and dewy texture of Mandi biryani is a madcap for many biryani lovers. It is a delicious combination of boiled rice, meat, and fusion spices. Barakas also serves soups, starters,
+        grills, BBQ'S. We always take a pledge to serve you with a huge halal menu - right from the core of Arab delicacy.</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m1.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Chicken Faham</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m2.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Crunchy Paneer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m3.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Turkish Grill</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m4.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Grilled Fish Skewers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m5.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Crispy Prawns</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'images/m6.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text text-center">Jalapeno Cheese crisps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
